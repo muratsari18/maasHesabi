@@ -20,9 +20,10 @@ public class Employee {
     }
     int bonus() {
         int overWork=0;
+        overWork=workHours-40;
         if (this.workHours>40){
-            overWork=workHours-40;
-            return overWork=overWork*30;
+
+            return overWork*30;
         }
         else
            return overWork=0;
@@ -32,13 +33,15 @@ public class Employee {
     double raiseSalary(){
         int year = 2021, totalYear;
         totalYear=year - hireYear;
-        if (totalYear<10){
+        if (totalYear<10 && totalYear>=0){
           return this.salary*0.05;    
         } else if (totalYear>=10 && totalYear<20) {
             return this.salary*0.1;
             }
-        else
+        else if (totalYear>20)
             return salary*0.15;
+        else
+            return 0;
     }
     void run(){
         System.out.println("Çalışanın Adı :" + this.name);
